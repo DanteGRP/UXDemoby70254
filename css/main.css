@@ -1,0 +1,140 @@
+/* CSS Document */
+
+/* ----------------- GENERAL STYLES ----------------- */
+
+a{
+	color: inherit;
+}
+
+.container .row{
+	margin-bottom: 3rem;
+}
+
+/* ----------------- END GENERAL STYLES ----------------- */
+
+
+
+/* ----------------- NAVBAR ----------------- */
+
+.navbar-brand img{
+	width: 55px;
+}
+
+.navbar-main .active{
+	text-decoration: underline;
+	text-decoration-style: wavy;
+	text-decoration-color: darkorange;
+	text-underline-offset: 9px;
+}
+
+/* ----------------- END NAVBAR ----------------- */
+
+/* ----------------- SOCIAL MEDIA ----------------- */
+
+.icons-social-networks a{
+	display: inline-flex;
+	width: 40px;
+	height: 40px;
+	justify-content: center;
+}
+
+.icons-social-networks a, .sec-clients a{
+	transition: 0.5s filter;
+}
+
+.icons-social-networks a:hover, .sec-clients a:hover{
+	filter: opacity(0.5);
+}
+
+/* ----------------- END SOCIAL MEDIA ----------------- */
+
+/* ----------------- IMAGE FRAME ----------------- */
+.photo-frame{
+	font-size: 20px;
+}
+
+.photo-frame::before, .photo-frame::after{
+	content: "";
+	display: block;
+	width: var(--box-size);
+	height: var(--box-size);
+	position: absolute;
+	z-index: -10;
+	animation: turnZ 7s linear alternate-reverse infinite;
+}
+
+.photo-frame::before{
+	--box-size: 3em;
+	background-image: radial-gradient(blue 50%, purple 50%);
+	top: calc( 99% - (var(--box-size)/2));
+	right: calc( 99% - (var(--box-size)/2));		
+}
+
+.photo-frame::after{
+	--box-size: 5em;
+	bottom: calc(98% - (var(--box-size)/2));
+	left: calc(98% - (var(--box-size)/2));
+	background: linear-gradient(45deg, gray 45%, transparent 45%), radial-gradient(purple 30%, yellow 30% 70%, gray 70%, transparent 70%);
+}
+
+@keyframes turnZ{
+	to{
+		transform: rotate(1turn);
+	}
+}
+
+.header-main{
+	min-height: 70vh;
+}
+
+/* ----------------- END IMAGE FRAME ----------------- */
+
+/* ----------------- SERVICES ICON ----------------- */
+.icon.service{
+	--box-size: 70px;
+	width: var(--box-size);
+	height: var(--box-size);
+	padding: 10px;
+}
+article img{
+	width: 40px;
+}
+
+/* ----------------- END SERVICES ICON ----------------- */
+
+/* ----------------- PORTFOLIO ----------------- */
+
+.portfolio-item img{
+	transition: 0.4s transform;
+}
+
+.portfolio-item:hover img{
+	transform: scale(0.96);
+}
+
+/* ----------------- END PORTFOLIO ----------------- */
+
+/* ----------------- CLIENTS ----------------- */
+
+.bg-purple{
+	background-color: rgba(131 87 235 / 0.3);
+	filter: opacity(0.55);
+}
+/* ----------------- END CLIENTS ----------------- */
+
+
+
+@media screen and (max-width: 376px){
+	body{
+		margin-top: 4rem;
+	}
+	
+	.header-main{
+		height: initial;
+	}
+	
+	.photo-frame{
+	font-size: 11px;
+}
+
+}
